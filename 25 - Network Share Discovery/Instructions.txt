@@ -1,0 +1,1 @@
+Invoke-ShareFinder -ExcludePrint -ExcludeIPC -CheckShareAccess -Threads 30 > ad_shares_info.csv

@@ -1,0 +1,3 @@
+reg.exe save hklm\sam sam.save
+reg.exe save hklm\security security.save
+reg.exe save hklm\system system.save

